@@ -12,29 +12,12 @@ import { NgFor } from '@angular/common';
   providers: [SService]
 })
 export class FormComponent implements OnInit{
-  // //somestuff seeing how it works
-  // color = new FormControl('');
-  // updateColor() {
-  //   this.color.setValue('Nancy');
-  // }
-  // myForm = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  // })
-  
-
   // actual code now
   generatedFromGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private SServise: SService){}
-
+  formData = this.SServise.jsonForForm
   ngOnInit(): void {
-    this.generatedFromGroup = this.formBuilder.group({})
-    const formData = this.SServise.jsonForForm
-
-    formData.forEach(field => {
-      this.generatedFromGroup.addControl(field.name, new FormControl(''));
-    });
     
   }
 
