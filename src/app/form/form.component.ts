@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,20 +9,23 @@ import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  color = new FormControl('');
+  // //somestuff seeing how it works
+  // color = new FormControl('');
+  // updateColor() {
+  //   this.color.setValue('Nancy');
+  // }
+  // myForm = new FormGroup({
+  //   firstName: new FormControl(''),
+  //   lastName: new FormControl(''),
+  // })
+  
 
-  updateColor() {
-    this.color.setValue('Nancy');
-  }
+  // actual code now
+  generatedFromGroup = new FormGroup({
 
-  myForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
   })
-
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.myForm.value);
+    // TODO: send request POST
+    console.warn(this.generatedFromGroup.value);
   }
-
 }

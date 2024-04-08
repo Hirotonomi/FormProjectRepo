@@ -1,5 +1,5 @@
 
-<label for="color">Color:</label>
+<!-- <label for="color">Color:</label>
 <input id="color" type="text" [formControl]="color"/>
 <p>{{color.value}}</p>
 <button type="button" (click)="updateColor()">Update Color</button>
@@ -12,5 +12,9 @@
     <input id="last-name" type="text" formControlName="lastName">
 
     <input type="submit"/>
+</form> -->
+<p>&nbsp;</p> 
+
+<form [formGroup]="generatedFromGroup" (ngSubmit)="onSubmit()">
 
 </form>
