@@ -4,15 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SService {
+  constructor (){}
 
-  jsonForForm = [
-    { "type": "text", "name": "ala", "label": "ala" },
-    {
-      "type": "number", "name": "ma", "label": "ma"
-    },
-    {
-      "type": "select", "name": "kota", "label": "kota", "options": ["a","b","c"]
+  jsonForForm = {
+    "ala" : {"type":"text"},
+    "ma": {"type":"number"},
+    "kota":{"type":"select","options":["a","b","c"]} 
     }
-  ]
+
+
+  getFormData(){
+    return this.jsonForForm
+  }
   
 }

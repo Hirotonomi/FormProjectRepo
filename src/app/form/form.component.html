@@ -16,6 +16,9 @@
 <p>&nbsp;</p> 
 
 <form [formGroup]="generatedFromGroup" (ngSubmit)="onSubmit()">
-    
+    <div formArrayName="formArray" *ngFor='let input of formData'>
+    <p>{{input}}</p>
+    </div>
+
     <input type="submit"/>
 </form>
