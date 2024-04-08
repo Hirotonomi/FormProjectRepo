@@ -16,5 +16,9 @@
 <p>&nbsp;</p> 
 
 <form [formGroup]="generatedFromGroup" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of generatedFromGroup.controls">
+        <label>{{ field.key }}</label>
+        <input [formControlName]="field.key" [type]="field.value.get('type').value">
+      </div>
 
 </form>
