@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -10,5 +10,19 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class FormComponent {
   color = new FormControl('');
+
+  updateColor() {
+    this.color.setValue('Nancy');
+  }
+
+  myForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  })
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.myForm.value);
+  }
 
 }

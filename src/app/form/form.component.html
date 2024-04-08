@@ -2,3 +2,15 @@
 <label for="color">Color:</label>
 <input id="color" type="text" [formControl]="color"/>
 <p>{{color.value}}</p>
+<button type="button" (click)="updateColor()">Update Color</button>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <input type="submit"/>
+
+</form>
